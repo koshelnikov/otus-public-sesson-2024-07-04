@@ -75,6 +75,7 @@ export class ProductCardsExampleComponent {
   }
 
   onErrorButtonClick() {
-    this.state.update(state => ({...state, status: 'error', errorMessage: 'Error Message fron Button'}));
+    this.state.update(state =>
+      ({...state, status: 'error', errorMessage: 'Error Message from Button'}));
   }
 }

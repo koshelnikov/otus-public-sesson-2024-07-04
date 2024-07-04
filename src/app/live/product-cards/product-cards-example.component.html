@@ -1,0 +1,8 @@
+<button (click)="onAddButtonClick()">Add</button>
+<button (click)="onRemoveButtonClick()">Remove</button>
+
+<ul>
+  @for (product of products; track product.id) {
+    <app-product-card [product]="product"/>
+  }
+</ul>
