@@ -19,12 +19,12 @@ export class ProductCardsExampleComponent {
 
   state = signal<
     {
-      status: 'error' | 'loading' | 'loaded' | 'idle',
+      status: 'error' | 'loading' | 'loaded',
       products: Product[]
       errorMessage?: string
     }
   >
-  ({status: 'idle', products: []})
+  ({status: 'loading', products: []})
 
   isLoading = computed(() => this.state().status === 'loading')
   products = computed(() => this.state().products);

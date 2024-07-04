@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Product} from "../../product-cards/product-cards-example.type";
-import {delay, Observable, of, switchMap, tap} from "rxjs";
+import {delay, Observable, of, tap} from "rxjs";
 import {generateProduct, getProducts} from "../../../data/fake";
 
 const products = getProducts();
