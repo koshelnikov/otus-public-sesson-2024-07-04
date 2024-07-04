@@ -1,5 +1,6 @@
 <button (click)="onAddButtonClick()" [disabled]="isLoading()">Add</button>
 <button (click)="onRemoveButtonClick()" [disabled]="isLoading()">Remove</button>
+<button (click)="onErrorButtonClick()" [disabled]="isLoading()">Generate Error</button>
 
 <ul>
   @for (product of products(); track product.id) {

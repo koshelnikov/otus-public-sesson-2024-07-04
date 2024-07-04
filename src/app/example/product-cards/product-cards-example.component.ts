@@ -76,4 +76,8 @@ export class ProductCardsExampleComponent {
   onAddButtonClick() {
     this.actionSource$.next('add')
   }
+
+  onErrorButtonClick() {
+    this.state.update(state => ({...state, status: 'error', errorMessage: 'Error Message fron Button'}));
+  }
 }
