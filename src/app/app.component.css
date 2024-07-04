@@ -1,0 +1,9 @@
+.angular-logo {
+  height: 50px;
+  margin-right: 26px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
