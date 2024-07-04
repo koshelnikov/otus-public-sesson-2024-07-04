@@ -12,7 +12,7 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
     return of([...products]).pipe(
-      //delay(1000),
+      delay(1000),
       tap((products: Product[]) => console.log('HTTP GET REQUEST'))
     );
   }
@@ -21,7 +21,7 @@ export class ProductService {
 
     products.push(generateProduct());
     return of(true).pipe(
-      //delay(1000),
+      delay(1000),
       tap(_ => console.log('HTTP POST REQUEST')));
   }
 
@@ -29,7 +29,7 @@ export class ProductService {
 
     products.splice(0, 1);
     return of(true).pipe(
-      //delay(1000),
+      delay(1000),
       tap(_ => console.log('HTTP DELETE REQUEST')));
   }
 }

@@ -4,7 +4,7 @@ import {ProductCardComponent} from "../product-card/product-card.component";
 import {ProductService} from "../services/product/product.service";
 import {ToastService} from "../services/toast/toast.service";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-import {concatMap, debounceTime, of, startWith, Subject, switchMap, tap} from "rxjs";
+import {concatMap, of, startWith, Subject, switchMap} from "rxjs";
 
 @Component({
   selector: 'app-product-cards',
@@ -32,9 +32,6 @@ export class ProductCardsExampleComponent {
   actionSource$ = new Subject<'add' | 'remove'>();
 
   productsSource$ = this.actionSource$.pipe(
-    //tap(_ => console.log('before debounce')),
-    debounceTime(100),
-    //tap(_ => console.log('after debounce')),
     concatMap(action => action === 'add'
       ? this.productService.addProduct()
       : this.productService.removeProduct()
